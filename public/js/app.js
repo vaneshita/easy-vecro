@@ -1,3 +1,5 @@
+'use strict';
+
 // geolocalización
 
 var coordinates = [];
@@ -13,13 +15,13 @@ var locations = coordinates;
 function initMap() {
   var map = new google.maps.Map($('#map')[0], {
     center: { lat: -34.397,
-      lng: 150.644},
+      lng: 150.644 },
     zoom: 10
   });
-  var infoWindow = new google.maps.InfoWindow({map: map});
+  var infoWindow = new google.maps.InfoWindow({ map: map });
 
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
+    navigator.geolocation.getCurrentPosition(function (position) {
       var pos = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
@@ -28,7 +30,7 @@ function initMap() {
       infoWindow.setPosition(pos);
       infoWindow.setContent('You Are Here!');
       map.setCenter(pos);
-    }, function() {
+    }, function () {
       handleLocationError(true, infoWindow, map.getCenter());
     });
   } else {
@@ -36,7 +38,7 @@ function initMap() {
     handleLocationError(false, infoWindow, map.getCenter());
   }
 
-  var markers = locations.map(function(location, i) {
+  var markers = locations.map(function (location, i) {
     return new google.maps.Marker({
       position: location,
       label: labels[i]
@@ -44,13 +46,10 @@ function initMap() {
   });
 
   //  marker clusterer
-  var markerCluster = new MarkerClusterer(map, markers,
-    {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+  var markerCluster = new MarkerClusterer(map, markers, { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
-  infoWindow.setContent(browserHasGeolocation ?
-    'Error: The Geolocation service failed.' :
-    'Error: Your browser doesn\'t support geolocation.');
+  infoWindow.setContent(browserHasGeolocation ? 'Error: The Geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation.');
 }
