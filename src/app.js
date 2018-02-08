@@ -41,9 +41,11 @@ let initMap = () => {
 
   // autocompletado
 
-  new google.maps.places.Autocomplete(start);
-  new google.maps.places.Autocomplete(end);
-
+  let autocompleteStar = new google.maps.places.Autocomplete(start);
+  let autocompleteEnd = new google.maps.places.Autocomplete(end);
+  // metodo para restringir
+  autocompleteStar.bindTo('bounds', map);
+  autocompleteEnd.bindTo('bounds', map);
 
   document.getElementById('find-me').addEventListener('click', find);
 };
