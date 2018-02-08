@@ -1,55 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Insta Collage</title>
-    <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
-  <body>
-    <section class="container">
-      <div class="frame hidden-xs hidden-sm">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Easy vecro</title>
+  <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="assets/icons/style.css">
+</head>
+
+<body>
+  <section class="container">
+    <div class="row">
+      <div class="frame hidden-xs hidden-sm col-12 col-lg-6">
         <div class="invisible-men">
-            <div class="leg left">
-                <div class="shoe"></div>
-            </div>
-            <div class="leg right">
-                <div class="shoe"></div>
-            </div>
+          <div class="leg left">
+            <div class="shoe"></div>
+          </div>
         </div>
         <div class="floor"></div>
+      </div>
+      <div class="col-12">
+        <h1 class="animated bounceInRight text-center">TRAZA TU RUTA</h1>
+      </div>
+      <div class="col-12 col-lg-5 offset-lg-6">
+          <div>
+            <a id="find-me" class="btn btn-primary"><span class="icon-location2">Tú ubicación</span></a>
+          </div>
+          <div class="form-group">
+            <label for="start-input"><span class="icon-target"></span></label>
+            <input type="text" class="form-control" id="start-input" placeholder="Ingrese su origen" name="origen">
+          </div>
+          <div class="form-group">
+            <label for="meta-input"><span class="icon-compass"></span></label>
+            <input type="text" class="form-control" id="meta-input" placeholder="Ingrese su destino">
+          </div>
+          <button type="button" class="btn btn-primary" id="ruta">Ruta</button>
+      </div>
     </div>
-      <h1 class="animated bounceInRight">TRAZA TU RUTA</h1>
-      <form action="/action_page.php">
-        <div class="form-group">
-          <label for="email">Origen:</label>
-          <input type="text" class="form-control" id="origen" placeholder="Origen" name="origen">
-        </div>
-        <div class="form-group">
-          <label for="pwd">Destino:</label>
-          <input type="text" class="form-control" id="destino" placeholder="Destino" name="destino">
-        </div>
-        <button type="button" class="btn btn-primary">Ruta</button>
-      </form>
-    </section>
-    <section class="container">
-     <div class="img-thumbnail">
-       <div class="map col-12" id="map"></div>
-     </div>
-    </section>
-    <footer>
-    <p class=" text-light d-flex flex-row justify-content-center">&copy; Copyright 2016 - City of USA.  All rights reserved.</p>
+  </section>
+  <section class="container">
+    <div class="img-thumbnail">
+      <div class="map col-12" id="map"></div>
+    </div>
+  </section>
+  <footer>
+    <p class=" text-light d-flex flex-row justify-content-center">&copy; Copyright 2018 - All rights reserved.</p>
   </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="vendors/bootstrap/js/tether-1.4.0.min.js"></script>
-    <script type="text/javascript" src="vendors/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ6rjMeHx_5BKT9KMTXXL4rLnjmjp_bDk&callback=initMap">
-    </script>
-    <script type="text/javascript" src="./js/app.js"></script>
-  </body>
+  <script type="text/javascript" src="vendors/bootstrap/js/tether-1.4.0.min.js"></script>
+  <script type="text/javascript" src="vendors/bootstrap/js/bootstrap.min.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ6rjMeHx_5BKT9KMTXXL4rLnjmjp_bDk&callback=initMap&libraries=places">
+  </script>
+  <script type="text/javascript" src="./js/app.js"></script>
+</body>
+
 </html>
